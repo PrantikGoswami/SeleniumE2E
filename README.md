@@ -1,4 +1,1 @@
-.classpath
-.project
-.settings/
-target/
+## Sample Selenium test application for E2E testing
