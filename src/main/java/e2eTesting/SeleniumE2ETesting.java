@@ -31,19 +31,7 @@ public class SeleniumE2ETesting {
 		zipCode.sendKeys("50078");
 		
 		WebElement findButton = driver.findElement(By.cssSelector("button.search-button"));
-		findButton.click();	
-		
-		Thread.sleep(5000);
-		
-		List<WebElement> capchaButtons = driver.findElements(By.cssSelector("button.ng-star-inserted"));
-		for(WebElement capcha : capchaButtons) {
-			if(capcha.getAttribute("class").contains("recaptcha-consent-btn")) {
-				capcha.click();
-				driver.findElement(By.id("search-query-typeahead")).sendKeys("Hausarzt");
-				driver.findElement(By.id("search-location-typeahead")).sendKeys("50078");
-				break;
-			}
-		}
+		findButton.click();
 		
 		Thread.sleep(5000);
 		
@@ -56,7 +44,9 @@ public class SeleniumE2ETesting {
 		Thread.sleep(5000);
 		
 		List<WebElement> contactCards = driver.findElements(By.tagName("app-contact-card"));
+		
 		WebElement timeSlot = null;
+		
 		outer: for(WebElement content : contactCards) {
 			WebElement slotDetails = content.findElement(By.tagName("app-contact-slots-details"));
 			if(slotDetails != null) {
