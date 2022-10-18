@@ -14,7 +14,7 @@ public class SeleniumE2ETesting {
 	
 	public static void main(String[] args) throws InterruptedException {
 		//local driver path of Chrome driver downloaded from https://www.selenium.dev/documentation/webdriver/ 
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\p.goswami\\Documents\\Soft\\chromedriver_win32\\chromedriver.exe");		
+		System.setProperty("webdriver.chrome.driver","E:\\chromedriver_win32\\chromedriver.exe");		
 		
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
